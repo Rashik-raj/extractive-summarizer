@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/materialize.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesome/css/all.css' %}">
+
+</head>
+
+<body>
+    <nav class="light-blue lighten-1" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="{% url 'home' %}" class="brand-logo">Summarizer</a>
+        </div>
+    </nav>
+
+    {% block content %}{% endblock %}    
+    
+    <footer class="page-footer orange">
+    <div class="container">
+        <div class="row">
+        <div class="col l6 s12 center-align">
+            <h5 class="white-text">Other product</h5>
+            <ul>
+                <li><a class="white-text" href="#!">Blood-Bank</a></li>
+            </ul>
+        </div>
+        <div class="col l6 s12">
+            <h5 class="white-text">Connect</h5>
+            <ul>
+            <li><a class="white-text" href="https://www.facebook.com/rashiks3" target="_blank"><i class="fab fa-facebook"></i> facebook</a></li>
+            <li><a class="white-text" href="https://twitter.com/Rashikraj07" target="_blank"><i class="fab fa-twitter"></i> twitter</a></li>
+            <li><a class="white-text" href="https://www.linkedin.com/in/rashikraj-shrestha-b62b81157/" target="_blank"><i class="fab fa-linkedin"></i> linked-in</li>
+            <li><a class="white-text" href="https://www.instagram.com/rashik.shrestha/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a class="white-text" href="https://github.com/Rashik-raj" target="_blank"><i class="fab fa-github"></i> github</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+        Made by <a class="orange-text text-lighten-3" href="#">Rashikraj Shrestha</a>
+        </div>
+    </div>
+    </footer>
+    <script src="{% static 'js/jquery-2.1.1.min.js' %}"></script>
+    <script src="{% static 'js/materialize.min.js' %}"></script>
+    <script src="{% static 'js/init.js' %}"></script>
+    <script>
+        $(document).ready(function(){
+            $('.modal').modal();
+        });
+    </script>
+</body>
+
+</html>

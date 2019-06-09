@@ -1,0 +1,15 @@
+{% extends 'layout.htm' %} 
+{% load static %}
+{% block content %}
+<div class="container" style="min-height: 600px">
+    <div class="row">
+        <div class="col s10 offset-s1">
+            <h1>Summary:</h1>
+            {% for result in results %}
+                <li>{{ result }}</li>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
