@@ -4,10 +4,35 @@
 <div class="container" style="min-height: 600px">
     <div class="row">
         <div class="col s10 offset-s1">
-            <h1 class="blue-text text-darken-2">Summary:</h1>
+            <h1 class="blue-text text-darken-2 center-align">Summary</h1>
             {% for result in results %}
                 <li>{{ result }}</li>
             {% endfor %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s10 offset-s1">
+            <h2 class="green-text text-darken-2 center-align">Data Visualization</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col l6 s12">
+            <h3 class="red-text text-darken-2 center-align">1. Input text wordcloud</h3>
+            <img src="{% static 'img/wordcloud.png' %}" alt="wordcloud" class="responsive-img">
+        </div>
+        <div class="col l6 s12">
+                <h3 class="red-text text-darken-2 center-align">2. Summary wordcloud</h3>
+                <img src="{% static 'img/wordcloud_summary.png' %}" alt="wordcloud_summary" class="responsive-img">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col l6 s12">
+            <h3 class="red-text text-darken-2 center-align">1. Input text word frequency</h3>
+            <img src="{% static 'img/graph.png' %}" alt="wordcloud" class="responsive-img">
+        </div>
+        <div class="col l6 s12">
+                <h3 class="red-text text-darken-2 center-align">2. Summary word frequency</h3>
+                <img src="{% static 'img/summary_graph.png' %}" alt="wordcloud_summary" class="responsive-img">
         </div>
     </div>
 </div>

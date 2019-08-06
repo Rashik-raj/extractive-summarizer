@@ -1,11 +1,11 @@
 from .easyScrape import reqUrl
+from .graph import makeWordcloud,makeGraph
 import re
 import nltk
 import heapq
 
 def summarize(data):
     text = data
-
     #check if its url or text
     text_type = "text"    
     if data[0:5] == "https" or data[0:4] == "http":
@@ -17,7 +17,10 @@ def summarize(data):
         text = ""
         for paragraph in page.find_all('p'):
             text += paragraph.text
-
+    #create wordcloud of input text        
+    makeWordcloud(text)
+    #create frequency graph of input text
+    makeGraph(text)
     text = re.sub(r'\[[0-9]*\]',' ',text)            
     text = re.sub(r'\s+',' ',text)    
     clean_text = text.lower()
@@ -51,7 +54,12 @@ def summarize(data):
 
     best_sentences = heapq.nlargest(20,sent2score,key=sent2score.get)
     result = []
+    data = ""
     for sentences in best_sentences:
         result.append(sentences)
-
+        data += sentences
+    #create wordcloud of summary    
+    makeWordcloud(data,1)
+    #create frequency graph of summary
+    makeGraph(data,1)
     return result
