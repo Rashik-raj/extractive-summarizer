@@ -5,6 +5,8 @@ import nltk
 import heapq
 
 def summarize(data):
+    nltk.download('punkt')
+    nltk.download('stopwords')
     text = data
     #check if its url or text
     text_type = "text"    
